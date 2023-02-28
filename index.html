@@ -7,13 +7,19 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="./todo.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="buttons">
     <button onclick="fetchTodos()">Fetch Todos</button>
     <button onclick="logTodos()">Log Todos</button>
     <button onclick="populateTodos()">Populate Todos</button>
+  </div>
     <ol id="todo-list">
       <!-- LIs will go here -->
     </ol>
+  
   </body>
 </html>

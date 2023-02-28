@@ -1,0 +1,32 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 5%;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border-color: #232e3a;
+  height: 80px;
+  width: fit-content;
+  font-family: 'Indie Flower';
+  font-size: 25px;
+  text-align: center;
+  background-color: #232e3a;
+  color: #8a5034;
+  font-weight: bold;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  color: #c49e85;
+}
