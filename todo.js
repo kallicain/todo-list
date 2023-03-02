@@ -28,6 +28,14 @@ const logTodos = () => {
   console.log(arrayOfTodos);
 };
 
+
+  //BELOW : get ol by id
+  //loop through the arrayOfTodos
+    //create li element
+    //create a textnode and make it equal to the title
+    //append textnode into list into
+    //append the list item into ol
+
 const populateTodos = () => {
   const ol = document.getElementById("todo-list");
   for (let index = 0; index < arrayOfTodos.length; index++) {
@@ -39,10 +47,26 @@ const populateTodos = () => {
   }
 };
 
+// const filterTodosOldSchool = () => {
+//   let filtered = []
+//   for (let index = 0; index < arrayOfTodos.length; index++) {
+//     const todo = arrayOfTodos[index];
+//     let userId = 2
+//     if (todo.userId === userId) {
+//       filter.push(todo)
+//     }
+//   }
+//   console.log('filtered:', filtered)
+// }
 
-  //get ol by id
-  //loop through the arrayOfTodos
-    //create li element
-    //create a textnode and make it equal to the title
-    //append textnode into list into
-    //append the list item into ol
+const filterTodos = () => {
+  let filteredByUserId = arrayOfTodos.filter((todo) => {
+    let userId = []
+          if (todo.userId = ) {
+      return todo
+    }
+  })
+
+  console.log('filteredByUserId:', filteredByUserId)
+}
+
