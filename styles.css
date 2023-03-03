@@ -30,3 +30,33 @@ ol {
 button:hover {
   color: #c49e85;
 }
+
+
+#userId {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border-color: #232e3a;
+  height: fit-content;
+  width: fit-content;
+  font-family: 'Indie Flower';
+  font-size: 25px;
+  text-align: center;
+  background-color: #232e3a;
+  color: #8a5034;
+  font-weight: bold;
+}
+
+label {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border-color: #232e3a;
+  height: 80px;
+  width: fit-content;
+  font-family: 'Indie Flower';
+  font-size: 25px;
+  text-align: center;
+  color: #8a5034;
+  font-weight: bold;
+}
