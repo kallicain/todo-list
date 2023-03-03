@@ -15,8 +15,8 @@ let arrayOfTodos = [
   },
 ];
 
-console.log(arrayOfTodos[0].userId) // => 14
-console.log(arrayOfTodos[1].userId) // => 20
+// console.log(arrayOfTodos[0].userId); // => 14
+// console.log(arrayOfTodos[1].userId); // => 20
 
 const fetchTodos = () => {
   fetch("https://jsonplaceholder.typicode.com/todos")
@@ -28,13 +28,12 @@ const logTodos = () => {
   console.log(arrayOfTodos);
 };
 
-
-  //BELOW : get ol by id
-  //loop through the arrayOfTodos
-    //create li element
-    //create a textnode and make it equal to the title
-    //append textnode into list into
-    //append the list item into ol
+//BELOW : get ol by id
+//loop through the arrayOfTodos
+//create li element
+//create a textnode and make it equal to the title
+//append textnode into list into
+//append the list item into ol
 
 const populateTodos = () => {
   const ol = document.getElementById("todo-list");
@@ -47,26 +46,62 @@ const populateTodos = () => {
   }
 };
 
-// const filterTodosOldSchool = () => {
+// const filterTodos = () => {
 //   let filtered = []
 //   for (let index = 0; index < arrayOfTodos.length; index++) {
 //     const todo = arrayOfTodos[index];
 //     let userId = 2
 //     if (todo.userId === userId) {
-//       filter.push(todo)
+//       filtered.push(todo)
 //     }
 //   }
 //   console.log('filtered:', filtered)
 // }
 
+let filterTodoStorage = []
+
 const filterTodos = () => {
-  let filteredByUserId = arrayOfTodos.filter((todo) => {
-    let userId = []
-          if (todo.userId = ) {
-      return todo
+  const ol = document.getElementById("todo-list");
+  ol.innerHTML = "";
+  const usernumber = document.getElementById("userId").value;
+  let filterArray = arrayOfTodos.filter(
+    (filteredTodo) => filteredTodo.userId == usernumber
+  );
+  for (let index = 0; index < filterArray.length; index++) {
+    const todo = filterArray[index];
+    const li = document.createElement("li");
+    const title = document.createTextNode(todo.title);
+    li.appendChild(title);
+    ol.appendChild(li);
+    filterTodoStorage.push(todo)
+  }
+  console.log(filterArray);
+};
+
+const filterCompleteTodos = () => {
+  const ol = document.getElementById("todo-list");
+  ol.innerHTML = "";
+  for (let index = 0; index < filterTodoStorage.length; index++) {
+    const todo = filterTodoStorage[index];
+    if (todo.completed == true) {
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.appendChild(title);
+      ol.appendChild(li);
     }
-  })
+  }
+};
 
-  console.log('filteredByUserId:', filteredByUserId)
-}
-
+const filterUncompleteTodos = () => {
+  const ol = document.getElementById("todo-list");
+  ol.innerHTML = "";
+  for (let index = 0; index < filterTodoStorage.length; index++) {
+    const todo = filterTodoStorage[index];
+    if (todo.completed == false) {
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.appendChild(title);
+      ol.appendChild(li);
+    }
+  }
+};
